@@ -1,9 +1,8 @@
 package org.iesalandalus.programacion.matriculacion.dominio;
 
+import org.iesalandalus.programacion.matriculacion.modelo.dominio.CicloFormativo;
+import org.iesalandalus.programacion.matriculacion.modelo.dominio.Grado;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,13 +11,13 @@ public class CicloFormativoTest {
     private static final String CADENA_NO_ESPERADA = "La cadena devuelta no es la esperada.";
 
     private static final String NOMBRE_NO_ESPERADO = "El nombre devuelto no es el mismo que el pasado al constructor.";
-    private static final String CODIGO_NO_ESPERADO = "El código devuelto no es el mismo que el pasado al constructor.";
+    private static final String CODIGO_NO_ESPERADO = "El cï¿½digo devuelto no es el mismo que el pasado al constructor.";
     private static final String FAMILIA_PROFESIONAL_NO_ESPERADA = "La familia profesional devuelta no es la misma que la pasada al constructor.";
     private static final String GRADO_NO_ESPERADO = "El grado devuelto no es el mismo que el pasado al constructor.";
     private static final String HORAS_NO_ESPERADA = "Las horas devueltas no son la misma que las pasadas al constructor.";
 
     private static final int CODIGO_CF=1225;
-    private static final String FAMILIA_PROFESIONAL_CF="Informática y Comunicaciones";
+    private static final String FAMILIA_PROFESIONAL_CF="Informï¿½tica y Comunicaciones";
     private static final Grado GRADO_CF=Grado.GDCFGS;
     private static final String NOMBRE_CICLO_FORMATIVO="DAW";
     private static final int HORAS_CICLO_FORMATIVO=1000;
@@ -27,25 +26,25 @@ public class CicloFormativoTest {
     
 
 
-    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepción no es correcto.";
-    private static final String CODIGO_INCORRECTO = "Debería haber saltado una excepción indicando que el código es incorrecto";
+    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepciï¿½n no es correcto.";
+    private static final String CODIGO_INCORRECTO = "Deberï¿½a haber saltado una excepciï¿½n indicando que el cï¿½digo es incorrecto";
     private static final String ERROR_NOMBRE_NULO = "ERROR: El nombre de un ciclo formativo no puede ser nulo.";
-    private static final String ERROR_NOMBRE_NO_VALIDO = "ERROR: El nombre de un ciclo formativo no puede estar vacío.";
-    private static final String FAMILIA_PROFESIONAL_INCORRECTA = "Debería haber saltado una excepción indicando que la familia profesional es incorrecta.";
+    private static final String ERROR_NOMBRE_NO_VALIDO = "ERROR: El nombre de un ciclo formativo no puede estar vacï¿½o.";
+    private static final String FAMILIA_PROFESIONAL_INCORRECTA = "Deberï¿½a haber saltado una excepciï¿½n indicando que la familia profesional es incorrecta.";
     private static final String ERROR_FAMILIA_PROFESIONAL_NULA = "ERROR: La familia profesional de un ciclo formativo no puede ser nula.";
-    private static final String ERROR_FAMILIA_PROFESIONAL_NO_VALIDA = "ERROR: La familia profesional no puede estar vacía.";
+    private static final String ERROR_FAMILIA_PROFESIONAL_NO_VALIDA = "ERROR: La familia profesional no puede estar vacï¿½a.";
     private static final String ERROR_GRADO_NULO = "ERROR: El grado de un ciclo formativo no puede ser nulo.";
-    private static final String GRADO_INCORRECTO = "Debería haber saltado una excepción indicando que el grado es incorrecto";
+    private static final String GRADO_INCORRECTO = "Deberï¿½a haber saltado una excepciï¿½n indicando que el grado es incorrecto";
 
 
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepción no es correcto.";
-    private static final String OBJETO_DEBERIA_SER_NULO = "No se debería haber creado el objeto ciclo formativo.";
-    private static final String NOMBRE_INCORRECTO = "Debería haber saltado una excepción indicando que el nombre es incorrecto";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepciï¿½n no es correcto.";
+    private static final String OBJETO_DEBERIA_SER_NULO = "No se deberï¿½a haber creado el objeto ciclo formativo.";
+    private static final String NOMBRE_INCORRECTO = "Deberï¿½a haber saltado una excepciï¿½n indicando que el nombre es incorrecto";
 
-    private static final String HORAS_INCORRECTA = "Debería haber saltado una excepción indicando que las horas son incorrectas";
-    private static final String ERROR_HORAS_INCORRECTA = "ERROR: El número de horas de un ciclo formativo no puede ser menor o igual a 0 ni mayor a " + CicloFormativo.MAXIMO_NUMERO_HORAS + ".";
-    private static final String CICLO_FORMATIVO_NO_ESPERADO = "El ciclo formativo copiado debería ser el mismo que el pasado como parámetro.";
-    private static final String CICLO_FORMATIVO_NULO = "Debería haber saltado una excepción indicando que no se puede copiar un ciclo formativo nulo.";
+    private static final String HORAS_INCORRECTA = "Deberï¿½a haber saltado una excepciï¿½n indicando que las horas son incorrectas";
+    private static final String ERROR_HORAS_INCORRECTA = "ERROR: El nï¿½mero de horas de un ciclo formativo no puede ser menor o igual a 0 ni mayor a " + CicloFormativo.MAXIMO_NUMERO_HORAS + ".";
+    private static final String CICLO_FORMATIVO_NO_ESPERADO = "El ciclo formativo copiado deberï¿½a ser el mismo que el pasado como parï¿½metro.";
+    private static final String CICLO_FORMATIVO_NULO = "Deberï¿½a haber saltado una excepciï¿½n indicando que no se puede copiar un ciclo formativo nulo.";
     private static final String ERROR_COPIAR_CICLO_FORMATIVO_NULO = "ERROR: No es posible copiar un ciclo formativo nulo.";
 
     @Test
@@ -237,7 +236,7 @@ public class CicloFormativoTest {
     public void toStringDevuelveLaCadenaEsperada() {
         CicloFormativo cf = new CicloFormativo(CODIGO_CF, FAMILIA_PROFESIONAL_CF, GRADO_CF, NOMBRE_CICLO_FORMATIVO, HORAS_CICLO_FORMATIVO);
 
-        assertEquals(String.format("Código ciclo formativo=%d, familia profesional=%s, grado=%s, nombre ciclo formativo=%s, horas=%s",CODIGO_CF, FAMILIA_PROFESIONAL_CF, GRADO_CF, NOMBRE_CICLO_FORMATIVO, HORAS_CICLO_FORMATIVO), cf.toString(), CADENA_NO_ESPERADA);
+        assertEquals(String.format("Cï¿½digo ciclo formativo=%d, familia profesional=%s, grado=%s, nombre ciclo formativo=%s, horas=%s",CODIGO_CF, FAMILIA_PROFESIONAL_CF, GRADO_CF, NOMBRE_CICLO_FORMATIVO, HORAS_CICLO_FORMATIVO), cf.toString(), CADENA_NO_ESPERADA);
 
     }
 
@@ -245,7 +244,7 @@ public class CicloFormativoTest {
     public void imprimirDevuelveLaCadenaEsperada() {
         CicloFormativo cf = new CicloFormativo(CODIGO_CF, FAMILIA_PROFESIONAL_CF, GRADO_CF, NOMBRE_CICLO_FORMATIVO, HORAS_CICLO_FORMATIVO);
 
-        assertEquals(String.format("Código ciclo formativo=%d, nombre ciclo formativo=%s",CODIGO_CF, NOMBRE_CICLO_FORMATIVO), cf.imprimir(), CADENA_NO_ESPERADA);
+        assertEquals(String.format("Cï¿½digo ciclo formativo=%d, nombre ciclo formativo=%s",CODIGO_CF, NOMBRE_CICLO_FORMATIVO), cf.imprimir(), CADENA_NO_ESPERADA);
 
     }
 

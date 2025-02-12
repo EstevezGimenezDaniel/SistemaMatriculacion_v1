@@ -1,7 +1,8 @@
 package org.iesalandalus.programacion.matriculacion.negocio;
 
 import org.iesalandalus.programacion.matriculacion.MainApp;
-import org.iesalandalus.programacion.matriculacion.dominio.*;
+import org.iesalandalus.programacion.matriculacion.modelo.dominio.*;
+import org.iesalandalus.programacion.matriculacion.modelo.negocio.Asignaturas;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -14,25 +15,25 @@ public class AsignaturasTest {
     private static final String ERROR_CAPACIDAD_NO_CORRECTA = "ERROR: La capacidad debe ser mayor que cero.";
     private static final String ERROR_INSERTAR_ASIGNATURA_NULA = "ERROR: No se puede insertar una asignatura nula.";
     private static final String ERROR_BORRAR_ASIGNATURA_NULA = "ERROR: No se puede borrar una asignatura nula.";
-    private static final String ERROR_NO_MAS_ASIGNATURAS = "ERROR: No se aceptan más asignaturas.";
-    private static final String ERROR_ASIGNATURA_EXISTE = "ERROR: Ya existe una asignatura con ese código.";
+    private static final String ERROR_NO_MAS_ASIGNATURAS = "ERROR: No se aceptan mï¿½s asignaturas.";
+    private static final String ERROR_ASIGNATURA_EXISTE = "ERROR: Ya existe una asignatura con ese cï¿½digo.";
     private static final String ERROR_ASIGNATURA_BORRAR_NO_EXISTE = "ERROR: No existe ninguna asignatura como la indicada.";
 
-    private static final String OPERACION_NO_PERMITIDA = "Debería haber saltado una excepción indicando que dicha operación no está permitida.";
-    private static final String ASIGNATURA_NULA = "Debería haber saltado una excepción indicando que no se puede operar con una asignatura nula.";
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepción no es correcto.";
-    private static final String TIPO_EXCEPCION_NO_CORRECTO = "El tipo de la excepción no es correcto.";
-    private static final String EXCEPCION_NO_PROCEDE = "No debería haber saltado la excepción.";
-    private static final String OPERACION_NO_REALIZADA = "La operación no la ha realizado correctamente.";
-    private static final String ASIGNATURAS_NO_CREADAS = "Debería haber creado las asignaturas correctamente.";
+    private static final String OPERACION_NO_PERMITIDA = "Deberï¿½a haber saltado una excepciï¿½n indicando que dicha operaciï¿½n no estï¿½ permitida.";
+    private static final String ASIGNATURA_NULA = "Deberï¿½a haber saltado una excepciï¿½n indicando que no se puede operar con una asignatura nula.";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepciï¿½n no es correcto.";
+    private static final String TIPO_EXCEPCION_NO_CORRECTO = "El tipo de la excepciï¿½n no es correcto.";
+    private static final String EXCEPCION_NO_PROCEDE = "No deberï¿½a haber saltado la excepciï¿½n.";
+    private static final String OPERACION_NO_REALIZADA = "La operaciï¿½n no la ha realizado correctamente.";
+    private static final String ASIGNATURAS_NO_CREADAS = "Deberï¿½a haber creado las asignaturas correctamente.";
     private static final String REFERENCIA_NO_ESPERADA = "La referencia devuelta es la misma que la pasada.";
-    private static final String TAMANO_NO_ESPERADO = "El tamaño devuelto no es el esperado.";
+    private static final String TAMANO_NO_ESPERADO = "El tamaï¿½o devuelto no es el esperado.";
     private static final String CAPACIDAD_NO_ESPERADA="La capacidad devuelta no es la esperada.";
-    private static final String ASIGNATURA_NO_ESPERADA = "La asignatura devuelta no es la que debería ser.";
-    private static final String OBJETO_DEBERIA_SER_NULO = "No se debería haber creado el objeto.";
+    private static final String ASIGNATURA_NO_ESPERADA = "La asignatura devuelta no es la que deberï¿½a ser.";
+    private static final String OBJETO_DEBERIA_SER_NULO = "No se deberï¿½a haber creado el objeto.";
 
     private static final String CODIGO_ASIGNATURA="0100";
-    private static final String NOMBRE_ASIGNATURA="Programación";
+    private static final String NOMBRE_ASIGNATURA="Programaciï¿½n";
     private static final int HORAS_ASIGNATURA=256;
     private static final Curso CURSO_ASIGNATURA=Curso.PRIMERO;
     private static final int HORAS_DESDOBLE_ASIGNATURA=4;
@@ -45,14 +46,14 @@ public class AsignaturasTest {
     private static final int HORAS_DESDOBLE_ASIGNATURA_2=3;
 
     private static final String CODIGO_ASIGNATURA_3="0300";
-    private static final String NOMBRE_ASIGNATURA_3="Administración de Sistemas Operativos";
+    private static final String NOMBRE_ASIGNATURA_3="Administraciï¿½n de Sistemas Operativos";
     private static final int HORAS_ASIGNATURA_3=120;
     private static final Curso CURSO_ASIGNATURA_3=Curso.SEGUNDO;
     private static final int HORAS_DESDOBLE_ASIGNATURA_3=0;
     private static final EspecialidadProfesorado ESPECIALIDAD_PROFESORADO_ASIGNATURA_2=EspecialidadProfesorado.SISTEMAS;
 
     private static final int CODIGO_CF_1=1225;
-    private static final String FAMILIA_PROFESIONAL_CF="Informática y Comunicaciones";
+    private static final String FAMILIA_PROFESIONAL_CF="Informï¿½tica y Comunicaciones";
     private static final String NOMBRE_CICLO_FORMATIVO="DAW";
     private static final Grado GRADO_CF=Grado.GDCFGS;
     private static final int HORAS_CICLO_FORMATIVO=1000;

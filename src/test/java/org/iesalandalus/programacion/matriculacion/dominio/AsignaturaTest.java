@@ -1,47 +1,43 @@
 package org.iesalandalus.programacion.matriculacion.dominio;
 
+import org.iesalandalus.programacion.matriculacion.modelo.dominio.*;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AsignaturaTest {
 
-    private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
-    private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
+    private static final String ERROR_EXCEPCION = "Deberï¿½a haber saltado la excepciï¿½n.";
+    private static final String ERROR_NO_EXCEPCION = "No deberï¿½a haber saltado la excepciï¿½n.";
     private static final int CODIGO_CF=1225;
-    private static final String FAMILIA_PROFESIONAL_CF="Informática y Comunicaciones";
+    private static final String FAMILIA_PROFESIONAL_CF="Informï¿½tica y Comunicaciones";
     private static final Grado GRADO_CF=Grado.GDCFGS;
     private static final String NOMBRE_CICLO_FORMATIVO="DAW";
     private static final int HORAS_CICLO_FORMATIVO=1000;
     private static final String CODIGO_ASIGNATURA="0100";
     private static final String CODIGO_ASIGNATURA_MAL="01";
-    private static final String NOMBRE_ASIGNATURA="Programación";
+    private static final String NOMBRE_ASIGNATURA="Programaciï¿½n";
     private static final int HORAS_ASIGNATURA=256;
     private static final Curso CURSO_ASIGNATURA=Curso.PRIMERO;
     private static final int HORAS_DESDOBLE_ASIGNATURA=4;
     private static final EspecialidadProfesorado ESPECIALIDAD_PROFESORADO_ASIGNATURA=EspecialidadProfesorado.INFORMATICA;
 
-    private static final String OBJETO_DEBERIA_SER_NULO = "No se debería haber creado el objeto asignatura.";
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepción no es correcto.";
-    private static final String ERROR_CODIGO_NULO="ERROR: El código de una asignatura no puede ser nulo.";
-    private static final String ERROR_CODIGO_INCORRECTO="ERROR: El código de una asignatura no puede estar vacío.";
-    private static final String ERROR_CODIGO_FORMATO_INCORRECTO="ERROR: El código de la asignatura no tiene un formato válido.";
+    private static final String OBJETO_DEBERIA_SER_NULO = "No se deberï¿½a haber creado el objeto asignatura.";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepciï¿½n no es correcto.";
+    private static final String ERROR_CODIGO_NULO="ERROR: El cï¿½digo de una asignatura no puede ser nulo.";
+    private static final String ERROR_CODIGO_INCORRECTO="ERROR: El cï¿½digo de una asignatura no puede estar vacï¿½o.";
+    private static final String ERROR_CODIGO_FORMATO_INCORRECTO="ERROR: El cï¿½digo de la asignatura no tiene un formato vï¿½lido.";
     private static final String ERROR_NOMBRE_NULO="ERROR: El nombre de una asignatura no puede ser nulo.";
-    private static final String ERROR_NOMBRE_INCORRECTO="ERROR: El nombre de una asignatura no puede estar vacío.";
-    private static final String ERROR_HORAS_INCORRECTAS="ERROR: El número de horas de una asignatura no puede ser menor o igual a 0 ni mayor a " + Asignatura.MAX_NUM_HORAS_ANUALES + ".";
+    private static final String ERROR_NOMBRE_INCORRECTO="ERROR: El nombre de una asignatura no puede estar vacï¿½o.";
+    private static final String ERROR_HORAS_INCORRECTAS="ERROR: El nï¿½mero de horas de una asignatura no puede ser menor o igual a 0 ni mayor a " + Asignatura.MAX_NUM_HORAS_ANUALES + ".";
     private static final String ERROR_CURSO_NULO="ERROR: El curso de una asignatura no puede ser nulo.";
-    private static final String ERROR_HORAS_DESDOBLE_INCORRECTAS="ERROR: El número de horas de desdoble de una asignatura no puede ser menor a 0 ni mayor a "+ Asignatura.MAX_NUM_HORAS_DESDOBLES+ ".";
+    private static final String ERROR_HORAS_DESDOBLE_INCORRECTAS="ERROR: El nï¿½mero de horas de desdoble de una asignatura no puede ser menor a 0 ni mayor a "+ Asignatura.MAX_NUM_HORAS_DESDOBLES+ ".";
     private static final String ERROR_ESPECIALIDAD_NULA="ERROR: La especialidad del profesorado de una asignatura no puede ser nula.";
     private static final String ERROR_CICLO_FORMATIVO_ASIGNATURA_NULO="ERROR: El ciclo formativo de una asignatura no puede ser nulo.";
 
-    private static final String ASIGNATURA_NULA = "Debería haber saltado una excepción indicando que no se puede copiar una asignatura nula.";
+    private static final String ASIGNATURA_NULA = "Deberï¿½a haber saltado una excepciï¿½n indicando que no se puede copiar una asignatura nula.";
     private static final String ERROR_COPIAR_ASIGNATURA_NULA = "ERROR: No es posible copiar una asignatura nula.";
-    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepción no es correcto.";
+    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepciï¿½n no es correcto.";
 
 
     CicloFormativo cf=new CicloFormativo(CODIGO_CF, FAMILIA_PROFESIONAL_CF, GRADO_CF, NOMBRE_CICLO_FORMATIVO, HORAS_CICLO_FORMATIVO);
@@ -234,7 +230,7 @@ public class AsignaturaTest {
     void toStringDevuelveLaCadenaEsperada() {
         Asignatura asignatura = new Asignatura(CODIGO_ASIGNATURA, NOMBRE_ASIGNATURA,HORAS_ASIGNATURA,CURSO_ASIGNATURA,HORAS_DESDOBLE_ASIGNATURA,ESPECIALIDAD_PROFESORADO_ASIGNATURA,cf);
 
-        String cadenaEsperada=String.format("Código=%s, nombre=%s, horas anuales=%d, curso=%s, horas desdoble=%d, ciclo formativo=%s, especialidad profesorado=%s", CODIGO_ASIGNATURA, NOMBRE_ASIGNATURA,HORAS_ASIGNATURA,
+        String cadenaEsperada=String.format("Cï¿½digo=%s, nombre=%s, horas anuales=%d, curso=%s, horas desdoble=%d, ciclo formativo=%s, especialidad profesorado=%s", CODIGO_ASIGNATURA, NOMBRE_ASIGNATURA,HORAS_ASIGNATURA,
                 CURSO_ASIGNATURA,HORAS_DESDOBLE_ASIGNATURA, cf.imprimir(),ESPECIALIDAD_PROFESORADO_ASIGNATURA);
 
         assertEquals(cadenaEsperada, asignatura.toString());
@@ -248,7 +244,7 @@ public class AsignaturaTest {
 
         Asignatura asignatura = new Asignatura(CODIGO_ASIGNATURA, NOMBRE_ASIGNATURA,HORAS_ASIGNATURA,CURSO_ASIGNATURA,HORAS_DESDOBLE_ASIGNATURA,ESPECIALIDAD_PROFESORADO_ASIGNATURA,cf);
 
-        String cadenaEsperada=String.format("Código asignatura=%s, nombre asignatura=%s, ciclo formativo=%s", CODIGO_ASIGNATURA, NOMBRE_ASIGNATURA, cf.imprimir());
+        String cadenaEsperada=String.format("Cï¿½digo asignatura=%s, nombre asignatura=%s, ciclo formativo=%s", CODIGO_ASIGNATURA, NOMBRE_ASIGNATURA, cf.imprimir());
 
         assertEquals(cadenaEsperada, asignatura.imprimir());
 
