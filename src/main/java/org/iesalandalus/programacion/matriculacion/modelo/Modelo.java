@@ -12,16 +12,15 @@ import org.iesalandalus.programacion.matriculacion.modelo.negocio.Matriculas;
 import javax.naming.OperationNotSupportedException;
 
 public class Modelo {
-    public final static int CAPACIDAD = 5;
     private Alumnos alumnos;
     private Matriculas matriculas;
     private Asignaturas asignaturas;
     private CiclosFormativos ciclosFormativos;
     public void comenzar() {
-        this.alumnos = new Alumnos();
-        this.asignaturas = new Asignaturas();
-        this.ciclosFormativos = new CiclosFormativos();
-        this.matriculas = new Matriculas();
+        this.alumnos = new Alumnos(alumnos.getCapacidad());
+        this.asignaturas = new Asignaturas(asignaturas.getCapacidad());
+        this.ciclosFormativos = new CiclosFormativos(ciclosFormativos.getCapacidad());
+        this.matriculas = new Matriculas(matriculas.getCapacidad());
     }
     public void terminar() {
         System.out.println("Aplicacion terminada.");
@@ -78,7 +77,7 @@ public class Modelo {
     public Matricula[] getMatriculas() throws OperationNotSupportedException {
         return matriculas.get();
     }
-    public Matricula[] getMatriculas(Alumno alumno) throws OperationNotSupportedException {
+    public Matricula[] getMatriculas(Alumno alumno){
         return matriculas.get(alumno);
     }
     public Matricula[] getMatriculas(CicloFormativo cicloFormativo) {
