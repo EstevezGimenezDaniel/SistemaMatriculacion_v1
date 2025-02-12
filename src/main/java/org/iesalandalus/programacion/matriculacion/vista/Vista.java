@@ -1,6 +1,5 @@
 package org.iesalandalus.programacion.matriculacion.vista;
 
-import
 import org.iesalandalus.programacion.matriculacion.controlador.Controlador;
 import org.iesalandalus.programacion.matriculacion.modelo.dominio.Alumno;
 import org.iesalandalus.programacion.matriculacion.modelo.dominio.Asignatura;
